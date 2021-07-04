@@ -1,27 +1,14 @@
-import express, { Request, Response } from 'express'
-import cors from 'cors'
-import { initRoutes } from './http/routes'
-import logger from './http/middleware/logger.middleware'
+import { Database } from './database'
+import { HttpServer } from './http/http-server'
+
 require('dotenv').config()
 
-function run() {
-  const app = express()
-  const PORT = process.env.HTTP_PORT
+async function run() {
+  const database = new Database()
+  await database.connect()
 
-  app.use(cors())
-  app.use(logger())
-
-  app.get('/status', (req: Request, res: Response) => res.sendStatus(200))
-
-  initRoutes(app)
-
-  try {
-    app.listen(PORT, () => {
-      console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`)
-    })
-  } catch (err) {
-    console.log(err)
-  }
+  const httpServer = new HttpServer()
+  httpServer.init()
 }
 
 export default run

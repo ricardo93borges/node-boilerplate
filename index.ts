@@ -1,3 +1,5 @@
 import run from './src/app'
 
-run()
+;(async function () {
+  await run()
+})()
