@@ -1,11 +1,17 @@
+import { IUserRepository } from '../data/respositories/user.repository'
+
 export interface IUserService {
   get(): object
 }
 
 export class UserService {
-  constructor() {}
+  private userRepository: IUserRepository
 
-  get() {
-    return { id: 1, name: 'first user' }
+  constructor(userRepository: IUserRepository) {
+    this.userRepository = userRepository
+  }
+
+  async get() {
+    return await this.userRepository.find()
   }
 }
