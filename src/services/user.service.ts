@@ -1,4 +1,4 @@
-import { IUserRepository } from '../data/respositories/user.repository'
+import { IUserRepository } from '../data/repositories/user.repository'
 
 export interface IUserService {
   get(): object

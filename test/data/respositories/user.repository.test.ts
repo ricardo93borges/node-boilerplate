@@ -5,7 +5,7 @@ import {
   CreateDTO,
   UpdateDTO,
   UserRepository,
-} from '../../../src/data/respositories/user.repository'
+} from '../../../src/data/repositories/user.repository'
 
 const chance = new Chance()
 

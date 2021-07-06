@@ -1,5 +1,5 @@
 import { User } from './data/models/user.model'
-import { UserRepository } from './data/respositories/user.repository'
+import { UserRepository } from './data/repositories/user.repository'
 import { UserController } from './http/controllers/user.controller'
 import { UserService } from './services/user.service'
 

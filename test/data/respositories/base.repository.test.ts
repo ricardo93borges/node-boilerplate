@@ -1,6 +1,6 @@
 import { Chance } from 'chance'
 import { model, Schema, Document } from 'mongoose'
-import { BaseRepository } from '../../../src/data/respositories/base.repository'
+import { BaseRepository } from '../../../src/data/repositories/base.repository'
 
 const chance = new Chance()
 
