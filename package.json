@@ -6,8 +6,9 @@
   "scripts": {
     "start": "nodemon index.ts",
     "build": "tsc --project ./",
-    "test": "jest",
+    "test": "jest test/",
     "test:watch": "jest test/ --watch-all",
+    "test:coverage": "jest --coverage",
     "lint": "standard"
   },
   "keywords": [
