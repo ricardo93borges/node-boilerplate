@@ -18,7 +18,7 @@ describe('BaseRepository', () => {
   })
 
   describe('#find', () => {
-    it('should find() from model ', async () => {
+    it('should call find() from model ', async () => {
       TestModel.find = jest.fn().mockResolvedValue([{}])
 
       await testRepository.find()
@@ -26,7 +26,7 @@ describe('BaseRepository', () => {
       expect(TestModel.find).toBeCalledTimes(1)
     })
 
-    it('should findOne() from model ', async () => {
+    it('should call findOne() from model ', async () => {
       TestModel.findById = jest.fn().mockResolvedValue({})
       const id = chance.string({ numeric: true })
       await testRepository.findById(id)
